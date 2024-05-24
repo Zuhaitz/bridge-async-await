@@ -4,11 +4,11 @@ const find_movie_url = "https://api.themoviedb.org/3/search/movie";
 const movie_genres_url = "https://api.themoviedb.org/3/genre/movie/list";
 const poster_path = "https://image.tmdb.org/t/p/original";
 
-const searchFrom = document.querySelector("#search-form");
+const searchForm = document.querySelector("#search-form");
 const searchBar = document.querySelector("#search-bar");
 const movieInfoContainer = document.querySelector("#movie-info");
 
-searchFrom.addEventListener("submit", findMovie);
+searchForm.addEventListener("submit", findMovie);
 
 const listGenres = await getMovieGenres();
 
@@ -36,6 +36,9 @@ async function findMovie(event) {
 }
 
 function displayMoviesInDOM(movies) {
+  searchBar.value = "";
+  searchBar.blur();
+
   if (movies.length == 0) {
     movieInfoContainer.innerHTML = "<p>Movie not found</p>";
   } else {
@@ -43,12 +46,15 @@ function displayMoviesInDOM(movies) {
     movies.forEach((movie) => {
       movieInfoContainer.innerHTML += `
       <div class="card text-wrap">
-        <img src="${poster_path + movie.poster_path}" alt="${movie.title}">
+        <img class="card-img" src="${poster_path + movie.poster_path}" alt="${
+        movie.title
+      }">
         <div class="card-body">
           <h3 class="card-title">${movie.title}</h3>
-          <div>${movie.genre_ids.map(
-            (id) => `<span>${findGenreById(id)}</span>`
-          )}</div>
+          <div class="genre-list">${movie.genre_ids
+            .map((id) => `<p class="genre">${findGenreById(id)}</p>`)
+            .toString()
+            .replaceAll(",", " ")}</div>
           <h5 class="card-text">${movie.overview}</h5>
         </div>
       </div>

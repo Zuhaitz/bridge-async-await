@@ -1,3 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 10px;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.search-bar {
+  font-size: 18px;
+  padding: 8px 20px;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  background-color: #5a5a5a;
+}
+
+.search-bar::placeholder {
+  color: #919191;
+}
+
+.search-bar:focus {
+  color: white;
+  outline: none;
+}
+
+.search-btn {
+  font-size: 18px;
+  padding: 8px 20px;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  background-color: #ff3434;
+}
+
 .movie-container {
   display: flex;
   flex-wrap: wrap;
@@ -6,6 +50,44 @@
 
 .card {
   max-width: 250px;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  height: 750px;
+  border-radius: 20px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.card-img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card-title {
+  font-size: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-text {
+  font-size: 18px;
+  line-height: 22px;
+  height: 220px;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+}
+
+.genre-list {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.genre {
+  width: fit-content;
+  padding: 5px 10px;
+  margin: 2px;
+  color: #919191;
+  background-color: #3d3d3d;
 }
