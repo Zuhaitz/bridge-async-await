@@ -75,18 +75,18 @@
 }
 
 .card-text {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 22px;
   height: 220px;
   /* white-space: nowrap; */
   overflow: hidden;
   /* text-overflow: ellipsis; */
+  color: #bdbdbd;
 }
 
 .genre-list {
   display: flex;
   flex-wrap: wrap;
-  font-size: 12px;
   margin-bottom: 10px;
 }
 
@@ -94,6 +94,7 @@
   width: fit-content;
   padding: 5px 10px;
   margin: 3px;
+  font-size: 10px;
   border: 1px solid #919191;
   border-radius: 10px;
   color: #919191;
