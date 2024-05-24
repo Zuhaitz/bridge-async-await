@@ -81,13 +81,15 @@
   display: flex;
   flex-wrap: wrap;
   font-size: 12px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .genre {
   width: fit-content;
   padding: 5px 10px;
-  margin: 2px;
+  margin: 3px;
+  border: 1px solid #919191;
+  border-radius: 10px;
   color: #919191;
   background-color: #3d3d3d;
 }
